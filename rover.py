@@ -31,7 +31,7 @@ class Rover(SpaceShip):
 
 			for i in roverMovement:
 				initialPosition = eval('%s%s' % (i, str(initialPosition)))
-			print(initialPosition[0], initialPosition[1], __possibleDirections[initialPosition[2]])
+			print(initialPosition[0], initialPosition[1], possibleDirections[initialPosition[2]])
 		except:
 			print('Invalid!')
 			return

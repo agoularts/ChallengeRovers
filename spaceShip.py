@@ -2,16 +2,16 @@ import sys
 
 class SpaceShip:
 
-	def __init__(self, x, y):
-		self._x = int(x)
-		self._y = int(y)
+	def __init__(self, sizeX, sizeY):
+		self.sizeX = int(sizeX)
+		self.sizeY = int(sizeY)
 	
 	@classmethod
 	def getPlateauSize(self):
 		while 1:
 			try:
-				x, y = input().split()
-				return self(x, y)
+				sizeX, sizeY = input().split()
+				return self(sizeX, sizeY)
 			except:
 				print('Invalid input')
 				continue
