@@ -3,8 +3,8 @@ import sys
 class SpaceShip:
 
 	def __init__(self, x, y):
-		self.x = int(x)
-		self.y = int(y)
+		self._x = int(x)
+		self._y = int(y)
 	
 	@classmethod
 	def getPlateauSize(self):
