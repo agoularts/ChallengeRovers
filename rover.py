@@ -11,14 +11,14 @@ class Rover(SpaceShip):
 	@classmethod
 	def positionRover(self):
 		while 1:
-			#try:
-			positionX, positionY, dir = input().split()
-			initialPosition = (int(positionX), int(positionY), possibleDirections.find(dir))
+			try:
+				positionX, positionY, dir = input().split()
+				initialPosition = (int(positionX), int(positionY), possibleDirections.find(dir))
 
-			self.moveRover(self, initialPosition)
-			#except:
-			print('Invalid input. Try again!')
-			return
+				self.moveRover(self, initialPosition)
+			except:
+				print('Invalid input. Try again!')
+				return
 
 	def moveRover(self, initialPosition):
 		try:
