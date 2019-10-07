@@ -5,7 +5,7 @@ possibleCardinal = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
 class Rover(SpaceShip):
 
-	def __init__(self, x, y):
+	def __init__(self, sizeX, sizeY):
 		self
 
 	@classmethod
@@ -17,7 +17,7 @@ class Rover(SpaceShip):
 
 				self.moveRover(self, initialPosition)
 			except:
-				print('Invalid input. Try again!')
+				print('Invalid position. Try again!')
 				return
 
 	def moveRover(self, initialPosition):
@@ -32,7 +32,7 @@ class Rover(SpaceShip):
 				initialPosition = eval('%s%s' % (i, str(initialPosition)))
 			print(initialPosition[0], initialPosition[1], possibleDirections[initialPosition[2]])
 		except:
-			print('Invalid!')
+			print('Invalid move! Try again!')
 			return
 
 def main():
