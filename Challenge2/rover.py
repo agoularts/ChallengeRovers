@@ -22,12 +22,11 @@ class Rover(SpaceShip):
 
 	def moveRover(self, initialPosition):
 		try:
+			roverMovement = input().lower()
 
 			r = lambda x, y, a: (x, y, (a+1) % 4)
 			l = lambda x, y, a: (x, y, (a-1 + 4) % 4)
 			m = lambda x, y, a: (x+possibleCardinal[a][0], y+possibleCardinal[a][1], a)
-
-			roverMovement = input().lower()
 
 			for i in roverMovement:
 				initialPosition = eval('%s%s' % (i, str(initialPosition)))
