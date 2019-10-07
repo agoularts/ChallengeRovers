@@ -36,7 +36,6 @@ class Rover(SpaceShip):
 			return
 
 def main():
-
 	rover = Rover.getPlateauSize()
 	rover.positionRover()
 
