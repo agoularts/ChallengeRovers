@@ -3,11 +3,12 @@ import unittest
 class Rover(object):
 
 	def __init__(self):
+		self.plateauSizeX = 5
+		self.plateauSizeY = 5
 		self.x = 0
 		self.y = 0
 		#0 north, 1 east, 2 south, 3 weast
 		self.pointingTo = 0
-		self.plateauPosition = (5, 5)
 
 
 	def roverCoordinate(self, command=''):
@@ -48,9 +49,9 @@ class Rover(object):
 
 class RoverTest(unittest.TestCase):
 
-	#def testRoverCoordinate(self):
-	#	rover = Rover()
-	#	self.assertEqual('1 3 N', rover.roverCoordinate("LMLMLMLM"))
+	def testRoverCoordinate(self):
+		rover = Rover()
+		self.assertEqual('1 2 N', rover.roverCoordinate("LMLMLMLM"))
 
 	#	rover = Rover()
 	#	self.assertEqual('3 3 E', rover.roverCoordinate("MMRMMRMRRM"))
