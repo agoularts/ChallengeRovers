@@ -1,10 +1,11 @@
 
+
 class Rover(object):
 
-	def __init__(self, positionX, positionY):
+	def __init__(self, positionX, positionY, roverDirection):
 		self._positionX = int(positionX)
 		self._positionY = int(positionY)
-		self.initialDirection = 1
+		self.initialDirection = int(roverDirection)
 
 	def positionRover(self, commands=''):
 		for c in commands:
@@ -43,7 +44,11 @@ class Rover(object):
 		return self.initialDirection
 
 def main():
-	rover = Rover(3, 3)
+	nexus = Rover(1, 2, 0)
+	nexus.positionRover("LMLMLMLMM")
+
+	rover = Rover(3, 3, 1)
 	rover.positionRover("MMRMMRMRRM")
+
 if __name__ == '__main__':
 	main()
