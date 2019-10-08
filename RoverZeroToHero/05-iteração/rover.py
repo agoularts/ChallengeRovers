@@ -50,11 +50,6 @@ class Rover(object):
 		self.initialDirection = 3 if self.initialDirection == 0 else self.initialDirection - 1
 		return self.initialDirection
 
-
-	#def moveRover(self):
-	#	self.movePosition = self.movePosition + 1
-	#	return self.movePosition
-
 class RoverTest(unittest.TestCase):
 
 	def testMove(self):
@@ -186,5 +181,6 @@ class RoverTest(unittest.TestCase):
 		self.assertEqual(-5, rover.x)
 		self.assertEqual(0, rover.y)
 """
+
 if __name__ == '__main__':
 	unittest.main()
