@@ -1,14 +1,23 @@
+from spaceship import SpaceShip
+
 directions = ['N', 'E', 'S', 'W']
 
-class Rover(object):
+class Rover(SpaceShip):
 
-	def __init__(self, positionX, positionY, roverDirection):
-		self._positionX = int(positionX)
-		self._positionY = int(positionY)
-		self.initialDirection = directions.index(roverDirection)
+	def __init__(self, sizeX = 5, sizeY = 5):
+		self
 
-	def positionRover(self, commands=''):
-		for command in commands:
+	@classmethod
+	def getRoverCleanLocalization(self):
+		self._positionX, self._positionY, self.initialDirection = input().split()
+		self._positionX = int(self._positionX)
+		self._positionY = int(self._positionY)
+		self.initialDirection = directions.index(self.initialDirection)
+
+	def positionRover(self):
+		self.commands = input()
+
+		for command in self.commands:
 			if command == 'R':
 				self.rightRotateRover()
 			elif command == 'L':
@@ -44,11 +53,13 @@ class Rover(object):
 		return self.initialDirection
 
 def main():
-	nexus = Rover(1, 2, 'N')
-	nexus.positionRover("LMLMLMLMM")
+	roverOne = Rover.getPlateauSize()
+	roverOne.getRoverCleanLocalization()
+	roverOne.positionRover()
 
-	rover = Rover(3, 3, 'E')
-	rover.positionRover("MMRMMRMRRM")
+	roverTwo = Rover()
+	roverTwo.getRoverCleanLocalization()
+	roverTwo.positionRover()
 
 if __name__ == '__main__':
 	main()

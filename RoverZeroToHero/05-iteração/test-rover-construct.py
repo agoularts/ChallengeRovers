@@ -1,3 +1,4 @@
+
 import unittest
 
 directions = ['N', 'E', 'S', 'W']
