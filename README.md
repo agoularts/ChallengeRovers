@@ -1,6 +1,6 @@
 # ChallengeRovers
-## About my mind:
-I left the firsts files what i have coded in each folder, to see my evolution. The first code it's a really trash code because I didn't use TDD(BadRover/).   
+## About my mind && Anotations:
+I left the firsts files what i have coded in each folder, to see my evolution. The first code it's a really trash code because I didn't use TDD(BadRover/). My first time with TDD, looks good.   
 ## Description
 
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
