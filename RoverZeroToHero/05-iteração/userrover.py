@@ -1,19 +1,19 @@
-
+directions = ['N', 'E', 'S', 'W']
 
 class Rover(object):
 
 	def __init__(self, positionX, positionY, roverDirection):
 		self._positionX = int(positionX)
 		self._positionY = int(positionY)
-		self.initialDirection = int(roverDirection)
+		self.initialDirection = directions.index(roverDirection)
 
 	def positionRover(self, commands=''):
-		for c in commands:
-			if c == 'R':
+		for command in commands:
+			if command == 'R':
 				self.rightRotateRover()
-			elif c == 'L':
+			elif command == 'L':
 				self.leftRotateRover()
-			elif c == 'M':
+			elif command == 'M':
 				self.moveRover()
 
 		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
@@ -44,10 +44,10 @@ class Rover(object):
 		return self.initialDirection
 
 def main():
-	nexus = Rover(1, 2, 0)
+	nexus = Rover(1, 2, 'N')
 	nexus.positionRover("LMLMLMLMM")
 
-	rover = Rover(3, 3, 1)
+	rover = Rover(3, 3, 'E')
 	rover.positionRover("MMRMMRMRRM")
 
 if __name__ == '__main__':
