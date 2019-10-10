@@ -9,7 +9,7 @@ class Rover(object):
 		self._positionX = 0
 		self._positionY = 0
 		#0 North, 1 east, 2 south, 3 weast
-		self.initialDirection = 0
+		self.initialDirection = directions.index('N')
 
 		#(1, 2, 0)
 		#(1, 2, N)
