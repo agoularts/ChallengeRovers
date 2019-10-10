@@ -18,4 +18,21 @@ def positionRover(commands)
 	end
 end
 
+def moveRover()
+	if(initialDirection == 0)
+		positionY += 1
+
+	if(initialDirection == 2)
+		positionY -= 1
+
+	if(initialDirection == 1)
+		positionX += 1
+
+	if(initialDirection == 3)
+		positionX -= 1
+
+	return true
+end 
+
+
 positionRover(commands)
