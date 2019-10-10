@@ -61,5 +61,9 @@ def main():
 	roverTwo.getRoverCleanLocalization()
 	roverTwo.positionRover()
 
+	roverThree = Rover()
+	roverThree.getRoverCleanLocalization()
+	roverThree.positionRover()
+
 if __name__ == '__main__':
 	main()
