@@ -1,11 +1,13 @@
+#!/usr/bin/python
+
 from spaceship import SpaceShip
 
 directions = ['N', 'E', 'S', 'W']
 
 class Rover(SpaceShip):
 
-	def __init__(self, sizeX = 5, sizeY = 5):
-		self
+	def __init__(self, sizePlateauX = 5, sizePlateauY = 5):
+		pass
 
 	@classmethod
 	def getRoverCleanLocalization(self):
@@ -24,6 +26,7 @@ class Rover(SpaceShip):
 				self.leftRotateRover()
 			elif command == 'M':
 				self.moveRover()
+
 
 		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
 		print(f'{self._positionX} {self._positionY} {directions}')
@@ -60,10 +63,6 @@ def main():
 	roverTwo = Rover()
 	roverTwo.getRoverCleanLocalization()
 	roverTwo.positionRover()
-
-	roverThree = Rover()
-	roverThree.getRoverCleanLocalization()
-	roverThree.positionRover()
 
 if __name__ == '__main__':
 	main()
