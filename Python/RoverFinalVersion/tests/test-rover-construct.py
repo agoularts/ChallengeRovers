@@ -1,4 +1,4 @@
-from spaceship import SpaceShip
+from testSpaceShip import SpaceShip
 import unittest
 
 directions = ['N', 'E', 'S', 'W']

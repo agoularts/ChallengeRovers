@@ -1,8 +1,9 @@
+from testSpaceShip import SpaceShip
 import unittest
 
 directions = ['N', 'E', 'S', 'W']
 
-class Rover(object):
+class Rover(SpaceShip):
 	pass
 
 	def __init__(self):
