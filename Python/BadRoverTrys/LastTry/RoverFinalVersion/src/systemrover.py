@@ -10,14 +10,16 @@ class Rover(SpaceShip):
 		pass
 
 	@classmethod
-	def getRoverCleanLocalization(self, roverCommand):
-		self.positioRoverX = int(roverCommand[0])
-		self.positioRoverY = int(roverCommand[1])
-		self.initialDirection = directions.index(roverCommand[2])
+	def getRoverCleanLocalization(self):
+		self._positionX, self._positionY, self.initialDirection = input().split()
+		self._positionX = int(self._positionX)
+		self._positionY = int(self._positionY)
+		self.initialDirection = directions.index(self.initialDirection)
 
-	def positionRover(self, commands):
+	def positionRover(self):
+		self.commands = input()
 
-		for command in commands:
+		for command in self.commands:
 			if command == 'R':
 				self.rightRotateRover()
 			elif command == 'L':
@@ -27,21 +29,21 @@ class Rover(SpaceShip):
 
 
 		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
-		print('Heading: 'f'{self.positioRoverX} {self.positioRoverY} {directions}')
+		print(f'{self._positionX} {self._positionY} {directions}')
 
 	def moveRover(self):
 
 		if(self.initialDirection == 0): # North
-			self.positioRoverY +=1
+			self._positionY +=1
 
 		if(self.initialDirection == 2): # South
-			self.positioRoverY -= 1
+			self._positionY -= 1
 
 		if(self.initialDirection == 1): # East
-			self.positioRoverX += 1
+			self._positionX += 1
 
 		if(self.initialDirection == 3): # Weast
-			self.positioRoverX -= 1
+			self._positionX -= 1
 
 		return True
 
@@ -54,20 +56,13 @@ class Rover(SpaceShip):
 		return self.initialDirection
 
 def main():
+	roverOne = Rover.getPlateauSize()
+	roverOne.getRoverCleanLocalization()
+	roverOne.positionRover()
 
-	"""
-	How the challenge say, input file. Open file with commands, and read line by line.
-	"""
-	with open('rovercommands.input') as command:
-		plateauSize = command.readline().rstrip()
-		try:
-			while True:
-				rover = Rover(plateauSize)
-				rover.getRoverCleanLocalization(command.readline().rstrip().split())
-				rover.positionRover(command.readline().rstrip())
-			command.close()
-		except:
-			pass
+	roverTwo = Rover()
+	roverTwo.getRoverCleanLocalization()
+	roverTwo.positionRover()
 
 if __name__ == '__main__':
 	main()
