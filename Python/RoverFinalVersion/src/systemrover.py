@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """
-Rover System
+The Rover System
 """
 
 from spaceship import SpaceShip
@@ -18,6 +18,20 @@ class Rover(SpaceShip):
 		self.positionRoverX = int(roverCommand[0])
 		self.positionRoverY = int(roverCommand[1])
 		self.initialDirection = directions.index(roverCommand[2])
+
+	def positionRover(self, commands):
+
+		for command in commands:
+			if command == 'R':
+				self.rightRotateRover()
+			elif command == 'L':
+				self.leftRotateRover()
+			elif command == 'M':
+				self.moveRover()
+
+
+		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
+		print(f'{self.positionRoverX} {self.positionRoverY} {directions}')
 
 	def moveRover(self):
 
@@ -42,18 +56,4 @@ class Rover(SpaceShip):
 	def leftRotateRover(self):
 		self.initialDirection = 3 if self.initialDirection == 0 else self.initialDirection - 1
 		return self.initialDirection
-
-	def positionRover(self, commands):
-
-		for command in commands:
-			if command == 'R':
-				self.rightRotateRover()
-			elif command == 'L':
-				self.leftRotateRover()
-			elif command == 'M':
-				self.moveRover()
-
-
-		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
-		print(f'{self.positionRoverX} {self.positionRoverY} {directions}')
 
