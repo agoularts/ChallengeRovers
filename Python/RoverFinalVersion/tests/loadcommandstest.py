@@ -17,6 +17,7 @@ class FileLoadTest(unittest.TestCase):
 
 	def testLoadFile(self):
 		commandsRover = FileLoad.loadFile('rovercommands.input')
+		self.assertEqual(['5 5', '1 2 N', 'LMLMLMLMM', '3 3 E', 'MMRMMRMRRM'], commandsRover)
 
 
 if __name__ == '__main__':
