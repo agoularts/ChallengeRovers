@@ -1,9 +1,5 @@
 #!/usr/bin/python
 
-"""
-Rover System
-"""
-
 from spaceship import SpaceShip
 
 directions = ['N', 'E', 'S', 'W']
@@ -18,6 +14,20 @@ class Rover(SpaceShip):
 		self.positionRoverX = int(roverCommand[0])
 		self.positionRoverY = int(roverCommand[1])
 		self.initialDirection = directions.index(roverCommand[2])
+
+	def positionRover(self, commands):
+
+		for command in commands:
+			if command == 'R':
+				self.rightRotateRover()
+			elif command == 'L':
+				self.leftRotateRover()
+			elif command == 'M':
+				self.moveRover()
+
+
+		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
+		print(f'{self.positionRoverX} {self.positionRoverY} {directions}')
 
 	def moveRover(self):
 
@@ -43,17 +53,21 @@ class Rover(SpaceShip):
 		self.initialDirection = 3 if self.initialDirection == 0 else self.initialDirection - 1
 		return self.initialDirection
 
-	def positionRover(self, commands):
+def main():
 
-		for command in commands:
-			if command == 'R':
-				self.rightRotateRover()
-			elif command == 'L':
-				self.leftRotateRover()
-			elif command == 'M':
-				self.moveRover()
+	"""
+	How the challenge say, input file. Open file with commands, and read line by line.
+	"""
+	with open('rovercommands.input') as command:
+		plateauSize = command.readline().rstrip()
+		try:
+			while True:
+				rover = Rover(plateauSize)
+				rover.getRoverCleanLocalization(command.readline().rstrip().split())
+				rover.positionRover(command.readline().rstrip())
+			command.close()
+		except:
+			pass
 
-
-		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
-		print(f'{self.positionRoverX} {self.positionRoverY} {directions}')
-
+if __name__ == '__main__':
+	main()

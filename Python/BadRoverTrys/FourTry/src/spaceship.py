@@ -1,9 +1,5 @@
 import sys
 
-"""
-This class it's like the spaceShip, sending both rovers to Plateau
-"""
-
 class SpaceShip:
 
 	def __init__(self, sizePlateauX, sizePlateauY):

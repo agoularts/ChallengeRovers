@@ -1,4 +1,4 @@
-from testSpaceShip import SpaceShip
+from testSpaceship import SpaceShip
 import unittest
 
 directions = ['N', 'E', 'S', 'W']
@@ -7,8 +7,8 @@ class Rover(SpaceShip):
 	pass
 
 	def __init__(self):
-		self._positionX = 0
-		self._positionY = 0
+		self.positionRoverX = 0
+		self.positionRoverY = 0
 		#0 North, 1 east, 2 south, 3 weast
 		self.initialDirection = directions.index('N')
 
@@ -27,22 +27,22 @@ class Rover(SpaceShip):
 				self.moveRover()
 
 		directions = ['N', 'E', 'S', 'W'][self.initialDirection]
-		return f'{self._positionX} {self._positionY} {directions}'
-		print(f'{self._positionX} {self._positionY} {directions}')
+		return f'{self.positionRoverX} {self.positionRoverY} {directions}'
+		print(f'{self.positionRoverX} {self.positionRoverY} {directions}')
 
 	def moveRover(self):
 
 		if(self.initialDirection == 0): # North
-			self._positionY +=1
+			self.positionRoverY +=1
 
 		if(self.initialDirection == 2): # South
-			self._positionY -= 1
+			self.positionRoverY -= 1
 
 		if(self.initialDirection == 1): # East
-			self._positionX += 1
+			self.positionRoverX += 1
 
 		if(self.initialDirection == 3): # Weast
-			self._positionX -= 1
+			self.positionRoverX -= 1
 
 		return True
 
@@ -90,96 +90,96 @@ class RoverTest(unittest.TestCase):
 		roverOne.positionRover("LMLMLMLMM")
 
 		roverOne.moveRover()
-		self.assertEqual(0, roverOne._positionX)
-		self.assertEqual(2, roverOne._positionY)
+		self.assertEqual(0, roverOne.positionRoverX)
+		self.assertEqual(2, roverOne.positionRoverY)
 
 		roverOne.moveRover()
-		self.assertEqual(0, roverOne._positionX)
-		self.assertEqual(3, roverOne._positionY)
+		self.assertEqual(0, roverOne.positionRoverX)
+		self.assertEqual(3, roverOne.positionRoverY)
 
 		roverOne.moveRover()
-		self.assertEqual(0, roverOne._positionX)
-		self.assertEqual(4, roverOne._positionY)
+		self.assertEqual(0, roverOne.positionRoverX)
+		self.assertEqual(4, roverOne.positionRoverY)
 
 		roverOne.moveRover()
-		self.assertEqual(0, roverOne._positionX)
-		self.assertEqual(5, roverOne._positionY)
+		self.assertEqual(0, roverOne.positionRoverX)
+		self.assertEqual(5, roverOne.positionRoverY)
 
 		roverOne.moveRover()
-		self.assertEqual(0, roverOne._positionX)
-		self.assertEqual(6, roverOne._positionY)
+		self.assertEqual(0, roverOne.positionRoverX)
+		self.assertEqual(6, roverOne.positionRoverY)
 
 	def testLocationPositionSouth(self):
 		rovertTwo = Rover()
 		rovertTwo.positionRover("RRMM")
 
 		rovertTwo.moveRover()
-		self.assertEqual(0, rovertTwo._positionX)
-		self.assertEqual(-3, rovertTwo._positionY)
+		self.assertEqual(0, rovertTwo.positionRoverX)
+		self.assertEqual(-3, rovertTwo.positionRoverY)
 
 		rovertTwo.moveRover()
-		self.assertEqual(0, rovertTwo._positionX)
-		self.assertEqual(-4, rovertTwo._positionY)
+		self.assertEqual(0, rovertTwo.positionRoverX)
+		self.assertEqual(-4, rovertTwo.positionRoverY)
 
 		rovertTwo.moveRover()
-		self.assertEqual(0, rovertTwo._positionX)
-		self.assertEqual(-5, rovertTwo._positionY)
+		self.assertEqual(0, rovertTwo.positionRoverX)
+		self.assertEqual(-5, rovertTwo.positionRoverY)
 
 		rovertTwo.moveRover()
-		self.assertEqual(0, rovertTwo._positionX)
-		self.assertEqual(-6, rovertTwo._positionY)
+		self.assertEqual(0, rovertTwo.positionRoverX)
+		self.assertEqual(-6, rovertTwo.positionRoverY)
 
 		rovertTwo.moveRover()
-		self.assertEqual(0, rovertTwo._positionX)
-		self.assertEqual(-7, rovertTwo._positionY)
+		self.assertEqual(0, rovertTwo.positionRoverX)
+		self.assertEqual(-7, rovertTwo.positionRoverY)
 
 	def testLocationPositionEast(self):
 		roverThree = Rover()
 		roverThree.positionRover("MMRMMRMRRM")
 
 		roverThree.moveRover()
-		self.assertEqual(2, roverThree._positionX)
-		self.assertEqual(3, roverThree._positionY)
+		self.assertEqual(2, roverThree.positionRoverX)
+		self.assertEqual(3, roverThree.positionRoverY)
 
 		roverThree.moveRover()
-		self.assertEqual(2, roverThree._positionX)
-		self.assertEqual(4, roverThree._positionY)
+		self.assertEqual(2, roverThree.positionRoverX)
+		self.assertEqual(4, roverThree.positionRoverY)
 
 		roverThree.moveRover()
-		self.assertEqual(2, roverThree._positionX)
-		self.assertEqual(5, roverThree._positionY)
+		self.assertEqual(2, roverThree.positionRoverX)
+		self.assertEqual(5, roverThree.positionRoverY)
 
 		roverThree.moveRover()
-		self.assertEqual(2, roverThree._positionX)
-		self.assertEqual(6, roverThree._positionY)
+		self.assertEqual(2, roverThree.positionRoverX)
+		self.assertEqual(6, roverThree.positionRoverY)
 
 		roverThree.moveRover()
-		self.assertEqual(2, roverThree._positionX)
-		self.assertEqual(7, roverThree._positionY)
+		self.assertEqual(2, roverThree.positionRoverX)
+		self.assertEqual(7, roverThree.positionRoverY)
 
 	def testLocationPositionOest(self):
 		roverFour = Rover()
 		roverFour.positionRover('LMMM')
 
 		roverFour.moveRover()
-		self.assertEqual(-4, roverFour._positionX)
-		self.assertEqual(0, roverFour._positionY)
+		self.assertEqual(-4, roverFour.positionRoverX)
+		self.assertEqual(0, roverFour.positionRoverY)
 
 		roverFour.moveRover()
-		self.assertEqual(-5, roverFour._positionX)
-		self.assertEqual(0, roverFour._positionY)
+		self.assertEqual(-5, roverFour.positionRoverX)
+		self.assertEqual(0, roverFour.positionRoverY)
 
 		roverFour.moveRover()
-		self.assertEqual(-6, roverFour._positionX)
-		self.assertEqual(0, roverFour._positionY)
+		self.assertEqual(-6, roverFour.positionRoverX)
+		self.assertEqual(0, roverFour.positionRoverY)
 
 		roverFour.moveRover()
-		self.assertEqual(-7, roverFour._positionX)
-		self.assertEqual(0, roverFour._positionY)
+		self.assertEqual(-7, roverFour.positionRoverX)
+		self.assertEqual(0, roverFour.positionRoverY)
 
 		roverFour.moveRover()
-		self.assertEqual(-8, roverFour._positionX)
-		self.assertEqual(0, roverFour._positionY)
+		self.assertEqual(-8, roverFour.positionRoverX)
+		self.assertEqual(0, roverFour.positionRoverY)
 
 if __name__ == '__main__':
 	unittest.main()

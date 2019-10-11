@@ -1,8 +1,5 @@
 import sys
-
-"""
-This class it's like the spaceShip, sending both rovers to Plateau
-"""
+import unittest
 
 class SpaceShip:
 
@@ -20,3 +17,17 @@ class SpaceShip:
 
 	def sendRovers(self):
 		print('Rovers sended!')
+
+class SpaceShipTest(unittest.TestCase):
+
+	def testSize(self):
+		plateauOne = SpaceShip(5, 5)
+		plateauOne.confirmPlateauSize()
+		plateauOne.sendRovers()
+
+		plateauTwo = SpaceShip(5, 5)
+		plateauTwo.confirmPlateauSize()
+		plateauTwo.sendRovers()
+
+if __name__ == '__main__':
+	unittest.main()
