@@ -9,7 +9,7 @@ The command above, load the commands from 'rovercommands.input'
 ### Check tests
 to run, enter in /tests/, all files are tested
 ```
-python test-rover-construct.py
+python systemrovertest.py
 python sendrovertest.py
 ```
 
