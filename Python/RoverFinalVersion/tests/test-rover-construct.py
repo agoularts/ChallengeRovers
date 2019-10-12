@@ -63,11 +63,6 @@ class RoverTest(unittest.TestCase):
 		roverSubTwo = Rover(3, 3, 'E')
 		self.assertEqual('5 1 E', roverSubTwo.positionRover("MMRMMRMRRM"))
 
-	#def testInitialPosition(self):
-	#	rover = Rover(1, 2, 'E')
-	#	self.assertEqual('5 5', rover.plateauPosition(int(x), int(y)))
-
-
 	def testRoverPosition(self):
 		roverOne = Rover(1, 2, 'N')
 		self.assertEqual(0, roverOne.initialDirection)

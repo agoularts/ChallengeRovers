@@ -18,6 +18,7 @@ class MainTest(unittest.TestCase):
 
 	def testMain(self):
 		commandsRover = FileLoad.loadFile('rovercommands.input')
+		self.assertEqual(['5 5', '1 2 N', 'LMLMLMLMM', '3 3 E', 'MMRMMRMRRM'], commandsRover)
 
 		roverOne = Rover(commandsRover[0])
 		roverOne.getRoverCleanLocalization(commandsRover[1].split())
